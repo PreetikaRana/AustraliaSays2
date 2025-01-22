@@ -1,0 +1,25 @@
+﻿<div class="row"> 
+    <div class="col-9">
+        <u><h1>ARTICLE TYPES LIST</h1></u>
+    </div>
+    <div class="col-3">
+       <a asp-action="Insert" class="btn btn-info form-control"><i class="fas fa-plus"></i>&nbsp;Add New ArticleType</a>
+    </div>
+</div>
+<div class="border shadow-2 p-2 m-2">
+    <table id="tblData" class="table table-bordered table-striped ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ArticleType</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+    </table>
+
+</div>
+@section scripts
+{
+    <script src="~/js/articletype.js"></script>
+}

@@ -1,0 +1,55 @@
+﻿@model AustraliaSays2_Models.DTO.RegisterUserDTO
+
+<div class="row">
+    <div class="col-9">
+        <h1>Register</h1>
+    </div>
+</div>
+
+<@if (Model == null)
+{
+    <form asp-action="Register" method="post">
+        <div class="form-group">
+            <label for="FirstName">FirstName </label>
+            <input type="text" class="form-control" id="FirstName" name="FirstName" value="@Model.FirstName" aria-describedby="FirstName" placeholder="Enter FirstName">
+            <small id="firstnamehelp" class="form-text text-muted">Enter Your FirstName</small>
+        </div>
+        <div class="form-group">
+            <label for="LastName">LastName </label>
+            <input type="text" class="form-control" id="LastName" name="LastName" value="@Model.LastName" aria-describedby="LastName" placeholder="Enter LastName">
+            <small id="lastnamehelp" class="form-text text-muted">Enter Your LastName</small>
+        </div>
+        <div class="form-group">
+            <label for="Email">Email </label>
+            <input type="Email" class="form-control" id="Email" name="Email" value="@Model.Email" aria-describedby="Email" placeholder="Enter Email">
+            <small id="emailhelp" class="form-text text-muted">Enter Your Email</small>
+        </div>
+        <div class="form-group">
+            <label for="PhoneNumber">PhoneNumber </label>
+            <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" aria-describedby="PhoneNumber" placeholder="Enter PhoneNumber">
+            <small id="phonenumberhelp" class="form-text text-muted">Enter Your PhoneNumber</small>
+        </div>
+        <div class="form-group">
+            <label for="Address">Address </label>
+            <input type="text" class="form-control" id="Address" name="Address" value="@Model.Address" aria-describedby="Address" placeholder="Enter Address">
+            <small id="addresshelp" class="form-text text-muted">Enter Your Address</small>
+        </div>
+        <div class="form-group">
+            <label for="PostalCode">PostalCode</label>
+            <input type="text" class="form-control" id="PostalCode" name="PostalCode" value="@Model.PostalCode" placeholder="Enter PostalCode">
+        </div>
+        <div class="form-group">
+            <label for="Role">Role</label>
+            <input type="text" class="form-control" id="Role" name="Role" value="@Model.Role" placeholder="Enter Role">
+        </div>
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" name="Password" id="Password" placeholder=" Enter Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+}
+else
+{
+    <div>No model data available.</div>
+}
