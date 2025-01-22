@@ -15,50 +15,65 @@ namespace AustraliaSays2.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var model = new RegisterUserDTO
-            {
-                FirstName = "", // Initialize with actual data or empty
-                LastName = "",
-                Email = "",
-                PhoneNumber = "",
-                Address = "",
-                PostalCode = "",
-                Role = ""
-            };
+            
 
             return View();
         }
 
         public async Task<IActionResult> Register(RegisterUserDTO userDTO)
         {
-
             var response = new APIResponse();
+
+          
+            if (!ModelState.IsValid)
+            {
+                
+                response.StatusCode = HttpStatusCode.BadRequest;
+                response.Success = false;
+                response.Message = "There are validation errors in the form.";
+                response.Data = userDTO;
+
+           
+                return View(response);
+            }
+
             try
             {
+               
                 var user = await _userRegisterRepository.AddUserAsync(userDTO);
                 if (user == null)
                 {
-                    
-                        response.StatusCode= HttpStatusCode.BadRequest;
-                    response.Success = false;
-                    response.Message = "Their went something wrong durng registration";
-                }
                
-                response.StatusCode = HttpStatusCode.OK;
-                response.Success = true;
-                response.Message = "User Register Successfully";
-                response.Data = userDTO;
+                    response.StatusCode = HttpStatusCode.BadRequest;
+                    response.Success = false;
+                    response.Message = "Something went wrong during registration.";
+                }
+                else
+                {
+         
+                    response.StatusCode = HttpStatusCode.OK;
+                    response.Success = true;
+                    response.Message = "User registered successfully.";
+                    response.Data = userDTO;
+                }
             }
-             
-
             catch (Exception ex)
-            { 
-                response.StatusCode=HttpStatusCode.BadRequest;
-                response.Success= false;
+            {
+                
+                response.StatusCode = HttpStatusCode.BadRequest;
+                response.Success = false;
                 response.Message = ex.Message;
             }
+
+          
             return View(response);
         }
-             
+
+        public async Task<IActionResult> Login()
+        {
+            return View();
+        }
+
+
     }
 }

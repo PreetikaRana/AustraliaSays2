@@ -19,6 +19,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkSto
 builder.Services.AddScoped<ISiteTypeRepository, SiteTypeRepository>();
 builder.Services.AddScoped<IArticleTypeRepository, ArticleTypeRepository>();
 builder.Services.AddScoped<IUserRegisterRepository, UserRegisterRepository>();
+builder.Services.AddScoped<ILoginUserRepository, LoginUserRepository>();
 builder.Services.AddSingleton<GenerateTokenAsync>();
 
     
