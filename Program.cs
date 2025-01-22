@@ -1,6 +1,7 @@
 using AustraliaSays2_DataAccess.Data;
 using AustraliaSays2_DataAccess.Repository;
 using AustraliaSays2_DataAccess.Repository.IRepository;
+using AustraliaSays2_Models.Models;
 using AustraliaSays2_Utility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -15,14 +16,16 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 string cs = builder.Configuration.GetConnectionString("constr");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(cs));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 builder.Services.AddScoped<ISiteTypeRepository, SiteTypeRepository>();
 builder.Services.AddScoped<IArticleTypeRepository, ArticleTypeRepository>();
 builder.Services.AddScoped<IUserRegisterRepository, UserRegisterRepository>();
 builder.Services.AddScoped<ILoginUserRepository, LoginUserRepository>();
 builder.Services.AddSingleton<GenerateTokenAsync>();
 
-    
+
+
+
 
 
 var app = builder.Build();
