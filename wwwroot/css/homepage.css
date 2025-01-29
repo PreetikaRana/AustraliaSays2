@@ -1,0 +1,36 @@
+﻿body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+{
+    #carouselControls
+}
+{
+    height: 100%;
+    width: 200%;
+}
+
+.carousel-inner {
+    height: auto;
+}
+
+.carousel-item {
+    height: 100%;
+    position: relative
+}
+
+.carousel-background {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-item {
+    transition: background 1s ease-in-out;
+}

@@ -1,0 +1,38 @@
+﻿@model AustraliaSays2_Models.DTO.SiteTypeDTO
+
+
+<div class="container">
+  <form method="post">
+     <div class="row">
+         <h1><u>Add Site Type</u></h1>
+     </div>
+     <div class="row form-group">
+         <div class="col-3">
+             <div>
+                    <label asp-for="TypeName"></label>
+             </div>
+            </div>
+             <div class="col-9">
+                 <input asp-for="TypeName" class="form-control"/>
+                 <span asp-validation-for="TypeName" class="text-danger"></span>
+             </div>       
+     </div>
+     <div class="row">
+         <div class="col-6">
+             <button type="submit" class="btn btn-outline-dark form-control">
+                    <i class="bi bi-plus-circle"></i>Save
+             </button>
+            </div>
+             <div class="col-6">
+                    <a asp-action="Index" class="btn btn-outline-danger form-control">
+                        <i class="bi bi-backspace"></i>Back to List
+                    </a>
+             </div>
+            
+         
+
+     </div>
+  </form>
+
+</div>
+

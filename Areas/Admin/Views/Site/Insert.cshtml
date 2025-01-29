@@ -1,0 +1,56 @@
+﻿@model AustraliaSays2_Models.DTO.SiteDTO
+@{
+    ViewData["Title"] = "Insert";
+}
+
+<h1 class="p-2 m-4">Let's Join New Members</h1>
+<div>
+    <form method="post" enctype="multipart/form-data">
+        <div class="row form-group p-2 m-2">
+            <div class="col-3">
+                <label asp-for="CountryId" class="text-primary"></label>
+            </div>
+            <div class="col-6 text-dark">
+                <input asp-for="CountryId" class="form-control" />
+                <span asp-validation-for="CountryId"></span>
+            </div>
+        </div>
+        <div class="row form-group p-2 m-2">
+            <div class="col-3">
+                <label asp-for="URL" class="text-primary"></label>
+            </div>
+            <div class="col-6 text-dark">
+                <input asp-for="URL" class="form-control"/>
+                <span asp-validation-for="URL"></span>
+            </div>
+        </div>
+        <div class="row form-group p-2 m-2">
+            <div class="col-3">
+                <label asp-for="Logo" class="text-primary"></label>
+            </div>
+            <div class="col-6 text-dark">
+                <input asp-for="Logo" type="file" class="form-control" />
+                <span asp-validation-for="Logo"></span>
+            </div>
+        </div>
+        <div class="row form-group p-2 m-2">
+            <div class="col-3">
+                <label asp-for="SiteTypeId" class="text-primary"></label>
+            </div>
+            <div class="col-6 text-dark">
+                <input asp-for="SiteTypeId" class="form-control"/>
+                <span asp-validation-for="SiteTypeId"></span>
+            </div>
+        </div>
+        <div class="row  p-2 m-2 ">
+            <div class="col-3">
+                <button action="submit" class="btn btn-outline-info form-control"><i class="fas fa-plus">&nbsp; Save</i></button>
+
+            </div>
+            <div class="col-3">
+                <a asp-action="Index" class="btn btn-outline-danger form-control"> Back To List</a>
+            </div>
+        </div>
+    </form>
+   
+</div>

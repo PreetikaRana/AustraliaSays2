@@ -1,0 +1,35 @@
+﻿@model IEnumerable<AustraliaSays2_Models.Models.Site>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+<div class="col-6">
+        <h1>Let's Explore Sites</h1>
+</div>
+<div class="col-6 text-center">
+        <a asp-action="Insert" class="btn btn-outline-dark "><i class="fas fa-plus"></i>Add New Site</a>
+</div>
+</div>
+
+    <div class="row">
+
+        @foreach (var site in Model)
+        {
+            <div class="col-sm-6 p-3 ">
+                <div class="card">
+                    <div class="card-body">
+                        @if (!string.IsNullOrEmpty(site.Logo))
+                        {
+                            <img src="~/@site.Logo"  alt="Logo" class="img-fluid mb-3" style="min-height:10px; object-fit: cover;" />
+                        }
+                        <h5 class="card-title">@site.URL</h5>
+                        <a></a>
+                        <p class="card-text">Created on: @site.CreatedOn.ToString("MM/dd/yyyy")</p>
+                        <a href="@site.URL" class="btn btn-primary" target="_blank">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+

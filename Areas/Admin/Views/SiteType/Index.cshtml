@@ -1,0 +1,30 @@
+﻿
+<div class="row text-center">
+    <div class="col-9">
+        <u> <h1> SITE TYPE</h1></u>
+    </div>
+    <div class="col-2 text-center">
+        <a  asp-action="Insert" class="btn btn-info form-control"><i class="fas fa-plus"></i>New SiteType </a>
+    </div>
+</div>
+
+<div class="border shadow p-2 m-5">
+    <table id="tblData" class="table table-bordered table-active table-hover">
+
+        <thead>
+            <tr>
+                <th>TYPES</th>
+                <th>ACTIONS</th>
+
+            </tr>
+        </thead>
+
+    </table>
+</div>
+
+
+
+@section scripts
+{
+    <script src="~/js/sitetype.js"></script>
+}

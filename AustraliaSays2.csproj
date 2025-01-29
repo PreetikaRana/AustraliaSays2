@@ -18,12 +18,36 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AustraliaSays2_DataAccess\AustraliaSays2_DataAccess.csproj" />
     <ProjectReference Include="..\AustraliaSays2_Models\AustraliaSays2_Models.csproj" />
     <ProjectReference Include="..\AustraliaSays2_Utility\AustraliaSays2_Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Commenter\Controllers\" />
+    <Folder Include="wwwroot\lib\images\" />
+    <Folder Include="wwwroot\Logos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Logos\114387f1-5261-49a2-b5ff-ad03febbd3de.png" />
+    <None Include="wwwroot\Logos\558f018b-72b4-4539-b403-beb3ab1917ea.jpg" />
+    <None Include="wwwroot\Logos\68fbfd3a-472a-4af7-af80-a9959d62c025.jpg" />
+    <None Include="wwwroot\Logos\6d13101a-a107-4692-a898-d2f3dfd555f5.jpg" />
+    <None Include="wwwroot\Logos\827ed23a-8d61-4e6c-90d5-65cbb41a5c6a.jpg" />
+    <None Include="wwwroot\Logos\a1f312a4-a580-4a81-ae69-dc0830d3987c.jpg" />
+    <None Include="wwwroot\Logos\b05afe83-f81b-41cf-bc19-48e2abfc88e5.jpg" />
+    <None Include="wwwroot\Logos\b2161148-e3ae-431e-9938-01453000ff28.png" />
+    <None Include="wwwroot\Logos\c15a9a4f-84e5-400f-92c9-030d890bf1e3.png" />
+    <None Include="wwwroot\Logos\c22015b8-c073-4fe2-862a-690ed585a9a9.png" />
+    <None Include="wwwroot\Logos\d842d277-1489-45d3-a39e-ceb85e02ad7a.png" />
+    <None Include="wwwroot\Logos\e7e9daf1-f5ba-4667-a62c-a85451ced852.jpg" />
+    <None Include="wwwroot\Logos\ef4204f1-152a-44ea-9694-4acff34daedb.png" />
+    <None Include="wwwroot\Logos\ffbc70c3-eb44-4396-97a9-c66b3f11da9d.jpg" />
   </ItemGroup>
 
 </Project>

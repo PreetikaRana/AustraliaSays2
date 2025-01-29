@@ -1,0 +1,44 @@
+﻿@model AustraliaSays2_Models.DTO.ArticleTypeDTO
+
+<h1>@ViewData["Title"]</h1>
+<div class="container-fluid">
+    <form method="post">
+        <div class="row">
+            <div class="col-8 border-bottom text-center p-2 m-2"><u><h1>Update Articletype</h1></u></div>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-8 text-center ">
+            <div class="form-group row p-2 m-2">
+                <div class="col-4">
+                    <label asp-for="Id"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Id" class="form-control shadow" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row p-2 m-2">
+                <div class="col-4">
+                    <label asp-for="Type"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Type" class="form-control shadow-2" />
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row text-center p-2 m-2">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-outline-primary form-control">
+                        Update
+                    </button>
+                </div>
+                <div class="col-6">
+                    <a asp-action="Index" class="btn btn-outline-danger form-control">
+                        Back to list
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

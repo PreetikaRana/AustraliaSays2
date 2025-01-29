@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AustraliaSays2.styles.css" asp-append-version="true" />
-    
+
     <!-- External CSS (CDN versions) -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
@@ -33,24 +33,37 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="Reader" asp-controller="Home" asp-action="Privacy">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Articles" asp-action="Index">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Site" asp-action="Index">Sites</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Details</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" asp-area="" asp-controller="SiteType" asp-action="Index">SiteType</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="ArticleType" asp-action="Index">ArticleType</a>
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="SiteType" asp-action="Index">SiteType</a>
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="ArticleTypes" asp-action="Index">ArticleType</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>
                             </div>
                         </li>
-                        </ul>
-                        <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Index">Register</a>
+                            <form class="d-flex">
+                                <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width: 200px; border-radius: 15px; padding: 0.4rem; font-size: 14px; margin-right: 10px;">
+                                <button class="btn btn-outline-dark" type="submit" style="border-radius: 15px; padding: 0.4rem 0.8rem; font-size: 14px;"> Search </button>
+                            </form>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Auth" asp-action="Index">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Auth" asp-action="Login">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -58,11 +71,12 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container" style="max-width: 1600px; width: 100%; margin: 0 auto;">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+
 
     <footer class="border-top footer text-muted">
         <div class="container">

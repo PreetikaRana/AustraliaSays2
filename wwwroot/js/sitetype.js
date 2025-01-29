@@ -7,7 +7,7 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
         "ajax": {
-            "url":"/SiteType/GetAll"
+            "url":"/Admin/SiteType/GetAll"
         },
         "columns": [
             {"data":"typeName","width":"50%" },
@@ -16,8 +16,8 @@ function loadDataTable() {
                 "render": function (data) {
                     return `
                     <div class="text-center">
-                    <a href="/SiteType/Update/${data}" class="btn btn-info">Edit&nbsp <i class="fas fa-edit"></i></a>
-                    <a class="btn btn-danger" onclick="Delete('/SiteType/Delete/${data}')">Delete&nbsp <i class="fas fa-trash-alt"></i></a>
+                    <a href="/Admin/SiteType/Update/${data}" class="btn btn-info">Edit&nbsp <i class="fas fa-edit"></i></a>
+                    <a class="btn btn-danger" onclick="Delete('/Admin/SiteType/Delete/${data}')">Delete&nbsp <i class="fas fa-trash-alt"></i></a>
                     </div>`;
                 }
             }

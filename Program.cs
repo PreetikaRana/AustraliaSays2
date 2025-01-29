@@ -21,6 +21,8 @@ builder.Services.AddScoped<ISiteTypeRepository, SiteTypeRepository>();
 builder.Services.AddScoped<IArticleTypeRepository, ArticleTypeRepository>();
 builder.Services.AddScoped<IUserRegisterRepository, UserRegisterRepository>();
 builder.Services.AddScoped<ILoginUserRepository, LoginUserRepository>();
+builder.Services.AddScoped<ISiteRepository, SiteRepository>();
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
 builder.Services.AddSingleton<GenerateTokenAsync>();
 
 
@@ -54,7 +56,6 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 app.UseAuthentication();    
 
@@ -65,6 +66,6 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
         name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
+        pattern: "{area=Reader}/{controller=Home}/{action=Index}/{id?}");
 });
 app.Run();
