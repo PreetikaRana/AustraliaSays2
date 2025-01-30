@@ -145,6 +145,10 @@
       "PackagePath": "staticwebassets\\js\\privacy.js"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\js\\register.js",
+      "PackagePath": "staticwebassets\\js\\register.js"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

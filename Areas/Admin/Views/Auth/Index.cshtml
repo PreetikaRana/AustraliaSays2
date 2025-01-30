@@ -7,7 +7,7 @@
     </div>
 
 
-    <form asp-action="Register" method="post" enctype="multipart/form-data">
+    <form asp-area="Admin" asp-controller="Auth" asp-action="Register" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="FirstName">FirstName </label>
             <input type="text" class="form-control" id="FirstName" name="FirstName" value="@Model?.FirstName" aria-describedby="FirstName" placeholder="Enter FirstName">
@@ -49,3 +49,4 @@
     </form>
 
 </div>
+

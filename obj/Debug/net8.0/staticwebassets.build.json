@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "267UBxwqpXkvGiI6V1HIs3J1qhUvdZyvlrVpOY9gTao=",
+  "Hash": "JwxqjGX018zOfK9ah99lAa1RbP24zF0M06f/D/hkGKE=",
   "Source": "AustraliaSays2",
   "BasePath": "_content/AustraliaSays2",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\privacy.js"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\js\\register.js",
+      "SourceId": "AustraliaSays2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\",
+      "BasePath": "_content/AustraliaSays2",
+      "RelativePath": "js/register.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\register.js"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\js\\site.js",

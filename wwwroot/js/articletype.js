@@ -37,13 +37,15 @@ function Delete(url) {
         if (willDelete) {
             $.ajax({
                 url: url,
-                type: "Delete",
+                type: "DELETE",
                 success: function (data) {
 
                     if (data != null && data.success) {
                         toastr.success(data.message);
                         dataTable.ajax.reload(); 
-                    } else {
+                    }
+                    else
+                    {
                         toastr.error(data.message);
                     }
                 },

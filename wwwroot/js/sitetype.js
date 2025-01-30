@@ -30,22 +30,28 @@ function Delete(url) {
         text: "Delete Information",
         icon: "error",
         buttons: true,
-        dangerMode:true
+        dangerMode: true
     }).then((willDelete) => {
         if (willDelete) {
             $.ajax({
                 url: url,
                 type: "DELETE",
                 success: function (data) {
-                    if (data.success) {
+                    if (data != null && data.success) {
                         toastr.success(data.message);
                         dataTable.ajax.reload();
                     }
                     else {
                         toastr.error(data.message);
                     }
+                },
+                error: function () {
+                    toastr.error("Something Went Wrong while Deleting Data")
                 }
-            })
+            });
         }
-    })
+        else {
+            toastr.info("Delete Operation was Cancelled")
+        }
+    });
 }

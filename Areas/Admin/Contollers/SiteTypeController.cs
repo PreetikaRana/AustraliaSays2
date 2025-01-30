@@ -52,10 +52,17 @@ namespace AustraliaSays2.Areas.Admin.Contollers
         {
             if (ModelState.IsValid)
             {
-                await _siteTypeRepository.DeleteSiteTypesync(id);
-               
+              var result= await _siteTypeRepository.DeleteSiteTypesync(id);
+                if(result !=null)
+                {
+                    return Json(new { success=true, message="SiteType Deleted Successfully", id});
+                }
+                else
+                {
+                    return Json(new {success=false, message= "Failed to delete SiteType", id});
+                }
             }
-            return Json(new {data =id });
+            return Json(new {success=false, message ="Model is not valid ", id });
         }
     }
 }
