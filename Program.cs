@@ -23,6 +23,7 @@ builder.Services.AddScoped<IUserRegisterRepository, UserRegisterRepository>();
 builder.Services.AddScoped<ILoginUserRepository, LoginUserRepository>();
 builder.Services.AddScoped<ISiteRepository, SiteRepository>();
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
+builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 builder.Services.AddSingleton<GenerateTokenAsync>();
 
 

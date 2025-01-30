@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AustraliaSays2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2dc4c66179598337e2a056e9e82380f118fff85b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+710b91495d1a1cbc9ad2c599b9f5a982237d13e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("AustraliaSays2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AustraliaSays2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

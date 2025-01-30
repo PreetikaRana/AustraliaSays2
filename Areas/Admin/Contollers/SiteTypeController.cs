@@ -53,9 +53,9 @@ namespace AustraliaSays2.Areas.Admin.Contollers
             if (ModelState.IsValid)
             {
                 await _siteTypeRepository.DeleteSiteTypesync(id);
-                return RedirectToAction("Index");
+               
             }
-            return View(id);
+            return Json(new {data =id });
         }
     }
 }

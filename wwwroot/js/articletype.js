@@ -34,19 +34,26 @@ function Delete(url) {
         buttons: true,
         dangerMode: true
     }).then((willDelete) => {
-        $.ajax({
-            url: url,
-            type: "Delete",
-            success: function (data) {
-                if (data.success) {
-                    toastr.success(data.message);
-                    dataTable.ajax.reload();
+        if (willDelete) {
+            $.ajax({
+                url: url,
+                type: "Delete",
+                success: function (data) {
 
+                    if (data != null && data.success) {
+                        toastr.success(data.message);
+                        dataTable.ajax.reload(); 
+                    } else {
+                        toastr.error(data.message);
+                    }
+                },
+                error: function () {
+                    toastr.error("something went wrong while deleting Data.")
                 }
-                else {
-                    toastr.error(data.message);
-                }
-            }
-        })
-    })
+       
+            });
+        } else {
+            toastr.info("Delete operation was canceled.");
+        }
+    });
 }
