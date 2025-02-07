@@ -1,0 +1,200 @@
+﻿@model AustraliaSays2_Models.DTO.ArticleDTO
+@{
+    ViewData["Title"] = "Upsert";
+}
+
+<h1 class="p-2 m-2"><u>Upsert</u></h1>
+
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="Id">Enter Your Article Id</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="Id" class="form-control" />
+            <span asp-validation-for="Id" class="text-muted"></span>
+        </div>
+    </div>
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="ApplicationUserId">Enter Your UserId</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="ApplicationUserId" class="form-control" />
+            <span asp-validation-for="ApplicationUserId" class="text-muted"></span>
+        </div>
+    </div>
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="ArticleTypeId">Enter Your ArticleType Id</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="ArticleTypeId" class="form-control" />
+            <span asp-validation-for="ArticleTypeId" class="text-muted"></span>
+        </div>
+    </div>
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="Name">Enter Your Article Name</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-muted"></span>
+        </div>
+    </div>
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="Tags">Enter Your Tags</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="Tags" class="form-control" />
+            <span asp-validation-for="Tags" class="text-muted"></span>
+        </div>
+    </div>
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="SiteId">Enter Your SiteId</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="SiteId" class="form-control" />
+            <span asp-validation-for="SiteId" class="text-muted"></span>
+        </div>
+    </div>
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="URL">Enter Your URL</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="URL" class="form-control" />
+            <span asp-validation-for="URL" class="text-muted"></span>
+        </div>
+    </div>
+
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="Description">Enter Your Description</label>
+        </div>
+        <div class="col-6">
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-muted"></span>
+
+        </div>
+    </div>
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="ArticleImage">Enter Your Article Image</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="ArticleImage" type="file" class="form-control" />
+            <span asp-validation-for="ArticleImage" class="text-muted"></span>
+        </div>
+    </div>
+
+    <div class="form-group row p-2 m-2 align-content-center">
+        <div class="col-4">
+            <button type="submit" class="btn btn-success form-control"><i class="fas fa-plus"></i>&nbsp; Add/Update</button>
+        </div>
+        <div class="col-4">
+            <a asp-action="Index" class="btn btn-dark form-control"><i class="far fa-hand-point-left"></i>&nbsp; BackToList</a>
+        </div>
+        <div class="col-4">
+            <button button type="submit" asp-action="Delete" class="btn btn-danger form-control"><i class="fas fa-trash"></i>&nbsp; Delete</button>
+        </div>
+    
+        
+    </div>
+</form>
+
+
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* <div class="col-4">
+        <button type="button" class="btn btn-danger form-control" asp-route-id="@Model.Id" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="setDeleteId(@Model.Id)>
+        <i class="fas fa-trash"></i>&nbsp; Delete
+        </button>
+        </div> *@
+
+
+@* 
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this article?
+            </div>
+            <div class="modal-footer">
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script src="~/js/article.js"></script>
+} *@

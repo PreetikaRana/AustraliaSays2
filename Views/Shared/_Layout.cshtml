@@ -30,10 +30,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="User" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Reader" asp-controller="Home" asp-action="Privacy">About</a>
+                            <a class="nav-link text-dark" asp-area="User" asp-controller="Home" asp-action="Privacy">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Admin" asp-controller="Articles" asp-action="Index">Articles</a>
@@ -51,10 +51,10 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <form class="d-flex">
-                                <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width: 200px; border-radius: 15px; padding: 0.4rem; font-size: 14px; margin-right: 10px;">
-                                <button class="btn btn-outline-dark" type="submit" style="border-radius: 15px; padding: 0.4rem 0.8rem; font-size: 14px;"> Search </button>
-                            </form>
+                            <form class="d-flex" asp-area="User" asp-controller="Home" asp-action="Search" method="get" id="search-form">
+                                <input class="form-control" id="search-input" type="text" placeholder="Search" aria-label="Search" style="width: 200px; border-radius: 15px; padding: 0.4rem; font-size: 14px; margin-right: 10px;">
+                                <button class="btn btn-outline-dark" type="submit" style="border-radius: 15px; padding: 0.4rem 0.8rem; font-size: 14px;"> Search &#128269; </button>
+                            </form> 
                         </li>
 
                     </ul>
@@ -63,7 +63,7 @@
                             <a class="nav-link text-dark" asp-area="Admin" asp-controller="Auth" asp-action="Index">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Auth" asp-action="Login">Login</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Auth" asp-action="Login"><i style="font-size:24px" class="fa">&#xf013;</i></a>
                         </li>
                     </ul>
                 </div>

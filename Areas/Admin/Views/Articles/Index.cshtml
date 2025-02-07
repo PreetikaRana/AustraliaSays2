@@ -1,175 +1,144 @@
-﻿@{
+﻿@model IEnumerable<AustraliaSays2_Models.Models.Article>
+
+@{
     ViewData["Title"] = "Index";
 }
-<div class="row p-2 m-2 ">
-    <h1>Let's Explore</h1>
+<div class="row p-2 m-2">
+    <div class="col-9"><h1>Let's Explore</h1></div>
+    <div class="col-3"><a asp-action="Upsert" class="btn btn-outline-dark"><i class="fas fa-plus">Add Article</i></a></div>
+    
 
 </div>
 
-@* <div class="container">
-    <div class=" card mb-6" style="max-width: 1040px; max-height:1000px">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="..." class="card-img" alt="...">
-            </div>
-            <div class="col-md-6">
+
+ <div class="row p-2 m-2 ">
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var articles in Model)
+        {
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="@articles.ArticleImage" alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h5 class="card-title card- ">Ca title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h4 class="card-title">@articles.Name</h4>
+                    <p class="card-text">@articles.Description</p>
+
+                </div>
+
+                <div class="d-grid gap-2 d-md-block">
+                    @if (!string.IsNullOrEmpty(articles.ArticleImage))
+                    {
+                        <a href="@articles.URL" class="btn btn-outline-dark btn-sm ">Visit</a>
+                    }
+                    
+                    <a asp-action="Comment" class="btn btn-outline-info btn-sm"> Comment</a>
                 </div>
             </div>
-        </div>@*
-                <div class="row">
-                    <div class="col-3">
-                        <img src=""/>
-                        </div>
-                </div>
+        }
+
+
+    }
+
+    else
+    {
+        <p>No Articles Found</p>
+    }
+ </div>
+
+
+
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
     </div>
-</div>
-<div class="container">
-    <div class="card mb-3" style="max-width: 1040px;max-height:1000px"> @*Article Card should have site logo through foreign key site logo is not coming that we have to check ............ 
-        <div class="row no-gutters">            
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>            
-            <div class="col-md-4">
-                <img src="..." class="card-img" alt="...">
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+
+
+
+
+                    @* <div class="row p-2 m-2">
+    <div class="card-columns">
+        <div class="card">
+            <img src="~/lib/images/light.jpeg" class="card-img-top" alt="Decreasing the Risk of Nuclear War Is Hard, but Possible">
+            <div class="card-body">
+                <h5 class="card-title">Decreasing the Risk of Nuclear War Is Hard, but Possible</h5>
+                <p class="card-text">War is a fact of life. It is not a problem that can be fully solved with new inventions or math equations. Eliminating its prospect entirely may be impossible... </p>
             </div>
         </div>
-    </div> 
-</div> *@
+        <div class="card p-3">
+            <blockquote class="blockquote mb-0 card-body">
+                <p>Essential Workers Need Essential Protection.</p>
+                <footer class="blockquote-footer">
+                    <small class="text-muted">
+                        By Kevin Esvelt, Ben Mueller, and Vaishnav Sunil <cite title="Source Title">The Pandemic News</cite>
+                    </small>
+                </footer>
+            </blockquote>
+        </div>
+        <div class="card">
+            <img src="~/lib/images/elephanteye.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">A Holistic View of the Cell</h5>
+                <p class="card-text">There is a self-reinforcing feedback loop within science: models of reality are proposed, and experimental tools and methods are created to test those models. Tools dictate what can be discovered, and...</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
 
-<div class="card-columns">
-    <div class="card">
-        <img src="~/lib/images/light.jpeg" class="card-img-top" alt="Decreasing the Risk of Nuclear War Is Hard, but Possible">
-        <div class="card-body">
-            <h5 class="card-title">Decreasing the Risk of Nuclear War Is Hard, but Possible</h5>
-            <p class="card-text">War is a fact of life. It is not a problem that can be fully solved with new inventions or math equations. Eliminating its prospect entirely may be impossible. While nuclear stalemate has made war between great powers less likely, the consequences of nuclear war would be devastating. Hiroshima and Nagasaki occurred when the U.S.</p>
         </div>
-    </div>
-    <div class="card p-3">
-        <blockquote class="blockquote mb-0 card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">
-                <small class="text-muted">
-                   Someone famous in <cite title="Source Title">Source Title</cite>
-                </small>
-            </footer>
-        </blockquote>
-    </div>
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="card bg-primary text-white text-center p-3">
+            <blockquote class="blockquote mb-0">
+                <p>Commonsense Clues: A Defense of Longtermism.</p>
+                <footer class="blockquote-footer text-white">
+                    <small>
+                        By Richard Yetter Chappell <cite title="Source Title">Source Title</cite>
+                    </small>
+                </footer>
+            </blockquote>
         </div>
-    </div>
-    <div class="card bg-primary text-white text-center p-3">
-        <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-            <footer class="blockquote-footer text-white">
-                <small>
-                    Someone famous in <cite title="Source Title">Source Title</cite>
-                </small>
-            </footer>
-        </blockquote>
-    </div>
-    <div class="card text-center">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="card text-center">
+            <blockquote class="blockquote mb-0">
+                <p><i>----The Family Recipes Critics.---</i></p>
+
+            </blockquote>
+            <small class="text-muted ">
+                - by Christian Mark <cite title="Source Title">Source Title</cite>
+            </small>
         </div>
-    </div>
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-    </div>
-    <div class="card p-3 text-right">
-        <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">
-                <small class="text-muted">
-                    Someone famous in <cite title="Source Title">Source Title</cite>
-                </small>
-            </footer>
-        </blockquote>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">We Will Build Our Way Out of the Climate Crisis</h5>
+                <p class="card-text">Climate change is the defining challenge of our time. Our civilization has built untold wealth upon 200 years of frantic burning of coal, oil, and ...</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
         </div>
+
+        <div class="card p-3 text-right">
+            <blockquote class="blockquote mb-0">
+                <p>The Future of Intelligence: An Interview with Steve Hsu</p>
+                <footer class="blockquote-footer">
+                    <small class="text-muted">
+                        by Stephen Hsu <cite title="Source Title">Source Title</cite>
+                    </small>
+                </footer>
+            </blockquote>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">As Good as Gold</h5>
+                <p class="card-text">When I walked in, I saw my father surrounded by medical devices, each beeping or humming as it gathered information about his condition. The nurse who ...</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+
     </div>
 
 </div>
-<div class="card-columns">
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title that wraps to a new line</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer so if added more text will the size of the card will also increase or it will crash down or something i need to found out that's why  am writng all this i can also copy and paste it but i have nothing else to do so that's why i am writing it hihihihi , need to write down a little more actually I Think a lot more , lets try now.</p>
-        </div>
-    </div>
-    <div class="card p-3">
-        <blockquote class="blockquote mb-0 card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">
-                <small class="text-muted">
-                    Someone famous in <cite title="Source Title">Source Title</cite>
-                </small>
-            </footer>
-        </blockquote>
-    </div>
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-    </div>
-    <div class="card bg-primary text-white text-center p-3">
-        <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-            <footer class="blockquote-footer text-white">
-                <small>
-                    Someone famous in <cite title="Source Title">Source Title</cite>
-                </small>
-            </footer>
-        </blockquote>
-    </div>
-    <div class="card text-center">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-    </div>
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-    </div>
-    <div class="card p-3 text-right">
-        <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">
-                <small class="text-muted">
-                    Someone famous in <cite title="Source Title">Source Title</cite>
-                </small>
-            </footer>
-        </blockquote>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-    </div>
-</div>
+ *@

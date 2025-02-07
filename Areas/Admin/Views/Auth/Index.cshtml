@@ -5,8 +5,21 @@
             <h1>Register</h1>
         </div>
     </div>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
 
 
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+                
     <form asp-area="Admin" asp-controller="Auth" asp-action="Register" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="FirstName">FirstName </label>
@@ -47,6 +60,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
+  
 </div>
 

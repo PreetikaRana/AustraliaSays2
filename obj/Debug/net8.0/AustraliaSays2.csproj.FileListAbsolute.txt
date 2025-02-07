@@ -3,7 +3,6 @@ C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSa
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.AssemblyInfo.cs
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.RazorAssemblyInfo.cache
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.RazorAssemblyInfo.cs
@@ -564,3 +563,4 @@ C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\refint\Aust
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.pdb
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.genruntimeconfig.cache
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\ref\AustraliaSays2.dll
+C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.MvcApplicationPartsAssemblyInfo.cs

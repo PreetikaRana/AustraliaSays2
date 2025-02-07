@@ -5,8 +5,10 @@ using AustraliaSays2_Models.Models;
 using AustraliaSays2_Utility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,9 +26,10 @@ builder.Services.AddScoped<ILoginUserRepository, LoginUserRepository>();
 builder.Services.AddScoped<ISiteRepository, SiteRepository>();
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
+builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddSingleton<GenerateTokenAsync>();
 
-
+builder.Services.Configure<EmailSetting>(builder.Configuration.GetSection("EmailSettings"));
 
 
 
@@ -67,6 +70,6 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
         name: "default",
-        pattern: "{area=Reader}/{controller=Home}/{action=Index}/{id?}");
+        pattern: "{area=User}/{controller=Home}/{action=Index}/{id?}");
 });
 app.Run();

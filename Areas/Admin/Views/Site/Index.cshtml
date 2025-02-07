@@ -12,7 +12,7 @@
 </div>
 
     <div class="row">
-
+   
         @foreach (var site in Model)
         {
             <div class="col-sm-6 p-3 ">
@@ -22,7 +22,7 @@
                         {
                             <img src="@site.Logo"  alt="Logo" class="img-fluid mb-3" style="min-height:10px; object-fit: cover;" />
                         }
-                        <h5 class="card-title">@site.URL</h5>
+                        <h5 class="card-title">@site.Name</h5>
                         <a></a>
                         <p class="card-text">Created on: @site.CreatedOn.ToString("MM/dd/yyyy")</p>
                         <a href="@site.URL" class="btn btn-primary" target="_blank">Visit Site</a>
@@ -30,6 +30,19 @@
                 </div>
             </div>
         }
+   
 
     </div>
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}

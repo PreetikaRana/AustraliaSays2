@@ -1,0 +1,56 @@
+﻿@model AustraliaSays2_Models.DTO.CommentDTO
+@{
+    ViewData["Title"] = "InsertComment";
+}
+<h1 class="text-dark p-2 m-4">Leave A Comment</h1>
+<div>
+    <form method="post">
+
+        <div class="row form-group p-2 m-2">
+            <div class="col-3">
+                <label asp-for="Id">Enter Your CommentId</label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Id" class="text-dark form-control"/>
+                    <span asp-validation-for="Id" class="text-muted"></span>
+                </div>
+            <div>
+            </div>
+        </div>
+        <div class="row form-group p-2 m-2">
+            <div class="col-3">
+                <label asp-for="ArticleId">Enter Your ArticleId</label>
+            </div>
+            <div class="col-6">
+                <input asp-for="ArticleId" class="text-dark form-control" />
+                <span asp-validation-for="ArticleId" class="text-muted"></span>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div class="row form-group p-2 m-2">
+            <div class="col-3">
+                <label asp-for="Comments" >Enter Your Comment</label>
+            </div>
+            <div class="col-6">
+                <textarea class ="text-dark form-control " asp-for="Comments"></textarea>               
+                <span asp-validation-for="Comments" class="text-muted"></span>
+            </div>
+            <div>
+            </div>
+        </div>
+
+        <div class="form-group row p-2 m-2 align-content-center">
+            <div class="col-4">
+                <button type="submit" class="btn btn-success form-control"><i class="fas fa-plus"></i>&nbsp; Add/Update</button>
+            </div>
+
+            <div class="col-4">
+                <a asp-action="DeleteComment" class="btn btn-danger form-control"><i class="fas fa-trash">&nbsp; Delete</i></a>
+            </div>
+            <div class="col-4">
+                <a asp-action="Index" class="btn btn-dark form-control"><i class="far fa-hand-point-left"></i>&nbsp; BackToList</a>
+            </div>
+        </div>
+    </form>
+</div>

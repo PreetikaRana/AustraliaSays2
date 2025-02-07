@@ -1,0 +1,70 @@
+﻿@model AustraliaSays2_Models.ViewModels.CommentVM
+@{
+    ViewData["Title"] = "Comment";
+}
+<div class="col-9"><h1>Comments</h1></div>
+
+<div class="container">
+    <div class="row-12 mb-3">
+        <a asp-action="InsertComment" class="btn  btn-outline-dark w-100"><i class="fas fa-plus"></i>&nbsp; AddComment</a>
+    </div>
+
+    @if (Model.Comments != null && Model.Comments.Any())
+    {
+        @foreach (var role in Model.Comments)
+        {
+            <div class="row-12">
+                <div class="card">
+                    <div class="card-header">
+                        Article By - <i>@role.FirstName @role.LastName</i>
+                    </div>
+                    <div class="card-body">
+
+                        <p class="card-text"> @role.Comments</p>  @* commment *@
+                       
+                        <div>
+                            <p>@role.ModifiedAt</p>
+                        </div>
+                        <form asp-action="AddReport" method="post">
+                            <input type="hidden" name="commentId" value="@role.Id" />
+                            <div class="report-emojis">
+                                <button type="submit" name="ReportsComment" value="0" class="emoji-btn" title="Very Bad">😡</button>
+                                <button type="submit" name="ReportsComment" value="1" class="emoji-btn" title="Bad">😞</button>
+                                <button type="submit" name="ReportsComment" value="2" class="emoji-btn" title="Meh">😐</button>
+                                <button type="submit" name="ReportsComment" value="3" class="emoji-btn" title="Good">😊</button>
+                                <button type="submit" name="ReportsComment" value="4" class="emoji-btn" title="Very Good">😍</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No Comments</p>
+    } 
+
+</div>
+
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+
+@section scripts
+{
+    <script src="~/css/report.css"></script>
+}

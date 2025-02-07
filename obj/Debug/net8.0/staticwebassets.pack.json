@@ -5,12 +5,72 @@
       "PackagePath": "staticwebassets\\AustraliaSays2.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\ArticleImages\\07c0e01d-030e-4054-95f2-24f7f96f7e6a.jpg",
+      "PackagePath": "staticwebassets\\ArticleImages\\07c0e01d-030e-4054-95f2-24f7f96f7e6a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\ArticleImages\\11b0adde-7592-452b-b24a-3a4ca49ec902.jpg",
+      "PackagePath": "staticwebassets\\ArticleImages\\11b0adde-7592-452b-b24a-3a4ca49ec902.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\ArticleImages\\16b44bbc-b591-4971-a90a-f894dbcaa998.png",
+      "PackagePath": "staticwebassets\\ArticleImages\\16b44bbc-b591-4971-a90a-f894dbcaa998.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\ArticleImages\\493c7b46-2041-4bf1-8947-89a7433d12ce.jpg",
+      "PackagePath": "staticwebassets\\ArticleImages\\493c7b46-2041-4bf1-8947-89a7433d12ce.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\ArticleImages\\594c6c24-3453-4a77-a73b-f8c4a4d86909.gif",
+      "PackagePath": "staticwebassets\\ArticleImages\\594c6c24-3453-4a77-a73b-f8c4a4d86909.gif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\ArticleImages\\62d8ad82-003f-4a0f-b55a-7e3ae029d089.jpg",
+      "PackagePath": "staticwebassets\\ArticleImages\\62d8ad82-003f-4a0f-b55a-7e3ae029d089.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\ArticleImages\\6d2ced4b-7025-42be-88a5-435738fbfec4.jpg",
+      "PackagePath": "staticwebassets\\ArticleImages\\6d2ced4b-7025-42be-88a5-435738fbfec4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\ArticleImages\\d7f58e5f-2204-42e6-bbaa-326a20d34130.jpeg",
+      "PackagePath": "staticwebassets\\ArticleImages\\d7f58e5f-2204-42e6-bbaa-326a20d34130.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\ArticleImages\\df30e65c-ee49-4944-a745-19a60e6c3354.jpg",
+      "PackagePath": "staticwebassets\\ArticleImages\\df30e65c-ee49-4944-a745-19a60e6c3354.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\ArticleImages\\f05bd395-8627-472a-983d-bb3aa74b167e.png",
+      "PackagePath": "staticwebassets\\ArticleImages\\f05bd395-8627-472a-983d-bb3aa74b167e.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\02038aa7-a234-4182-9f94-109cd5dee110.gif",
+      "PackagePath": "staticwebassets\\Logos\\02038aa7-a234-4182-9f94-109cd5dee110.gif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\0a27edc6-910e-4d54-a68a-21eacd7639af.gif",
+      "PackagePath": "staticwebassets\\Logos\\0a27edc6-910e-4d54-a68a-21eacd7639af.gif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\0e122b77-dc27-41f7-9d42-70728f6ad3e3.gif",
+      "PackagePath": "staticwebassets\\Logos\\0e122b77-dc27-41f7-9d42-70728f6ad3e3.gif"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\114387f1-5261-49a2-b5ff-ad03febbd3de.png",
       "PackagePath": "staticwebassets\\Logos\\114387f1-5261-49a2-b5ff-ad03febbd3de.png"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\19760735-3703-430c-bc51-9d6f7f192a00.gif",
+      "PackagePath": "staticwebassets\\Logos\\19760735-3703-430c-bc51-9d6f7f192a00.gif"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\1b50b086-7546-4e9b-81a4-58cc82edd36a.gif",
       "PackagePath": "staticwebassets\\Logos\\1b50b086-7546-4e9b-81a4-58cc82edd36a.gif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\1e6da1bb-b09d-4a5c-b5a7-f5197ded8997.gif",
+      "PackagePath": "staticwebassets\\Logos\\1e6da1bb-b09d-4a5c-b5a7-f5197ded8997.gif"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\22f3ef7f-1a0e-4f8b-bc6c-c8d27299649a.png",
@@ -19,6 +79,10 @@
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\2e3483d2-4c37-4942-9b2d-e8d040184d3a.gif",
       "PackagePath": "staticwebassets\\Logos\\2e3483d2-4c37-4942-9b2d-e8d040184d3a.gif"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\3260f15b-4508-491c-b46c-3f89d82ec126.gif",
+      "PackagePath": "staticwebassets\\Logos\\3260f15b-4508-491c-b46c-3f89d82ec126.gif"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\32b19498-de50-49ec-b180-e2455d01412e.gif",
@@ -57,6 +121,10 @@
       "PackagePath": "staticwebassets\\Logos\\6d13101a-a107-4692-a898-d2f3dfd555f5.jpg"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\7c5e2fba-30e4-47eb-b1b7-24de00b8447b.gif",
+      "PackagePath": "staticwebassets\\Logos\\7c5e2fba-30e4-47eb-b1b7-24de00b8447b.gif"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\827ed23a-8d61-4e6c-90d5-65cbb41a5c6a.jpg",
       "PackagePath": "staticwebassets\\Logos\\827ed23a-8d61-4e6c-90d5-65cbb41a5c6a.jpg"
     },
@@ -73,6 +141,10 @@
       "PackagePath": "staticwebassets\\Logos\\aa8af6cc-5d69-4b09-9646-075204482b94.png"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\acca8931-7340-48f0-a71c-f60aee187662.gif",
+      "PackagePath": "staticwebassets\\Logos\\acca8931-7340-48f0-a71c-f60aee187662.gif"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\b05afe83-f81b-41cf-bc19-48e2abfc88e5.jpg",
       "PackagePath": "staticwebassets\\Logos\\b05afe83-f81b-41cf-bc19-48e2abfc88e5.jpg"
     },
@@ -81,12 +153,20 @@
       "PackagePath": "staticwebassets\\Logos\\b2161148-e3ae-431e-9938-01453000ff28.png"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\b3f5cf30-71f9-432c-9995-19ed81e199bc.gif",
+      "PackagePath": "staticwebassets\\Logos\\b3f5cf30-71f9-432c-9995-19ed81e199bc.gif"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\c15a9a4f-84e5-400f-92c9-030d890bf1e3.png",
       "PackagePath": "staticwebassets\\Logos\\c15a9a4f-84e5-400f-92c9-030d890bf1e3.png"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\c22015b8-c073-4fe2-862a-690ed585a9a9.png",
       "PackagePath": "staticwebassets\\Logos\\c22015b8-c073-4fe2-862a-690ed585a9a9.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\c276842b-ac38-4484-ad7d-e92edd4d76dc.gif",
+      "PackagePath": "staticwebassets\\Logos\\c276842b-ac38-4484-ad7d-e92edd4d76dc.gif"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\Logos\\cdf118e7-074d-4f4d-b1ae-6e78303493e8.png",
@@ -125,12 +205,20 @@
       "PackagePath": "staticwebassets\\css\\homepage.css"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\css\\report.css",
+      "PackagePath": "staticwebassets\\css\\report.css"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\js\\article.js",
+      "PackagePath": "staticwebassets\\js\\article.js"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\js\\articletype.js",
@@ -145,8 +233,8 @@
       "PackagePath": "staticwebassets\\js\\privacy.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\js\\register.js",
-      "PackagePath": "staticwebassets\\js\\register.js"
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\js\\searchingbar.js",
+      "PackagePath": "staticwebassets\\js\\searchingbar.js"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\js\\site.js",
@@ -369,8 +457,20 @@
       "PackagePath": "staticwebassets\\lib\\images\\education.jpg"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\educationarticleimg.jpg",
+      "PackagePath": "staticwebassets\\lib\\images\\educationarticleimg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\elephanteye.jpg",
+      "PackagePath": "staticwebassets\\lib\\images\\elephanteye.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\entertainment.jpg",
       "PackagePath": "staticwebassets\\lib\\images\\entertainment.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\festivals.jpg",
+      "PackagePath": "staticwebassets\\lib\\images\\festivals.jpg"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\light.jpeg",
@@ -379,6 +479,10 @@
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\movie.jpg",
       "PackagePath": "staticwebassets\\lib\\images\\movie.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\nuclear.jpg",
+      "PackagePath": "staticwebassets\\lib\\images\\nuclear.jpg"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\ourmission1.jpg",
@@ -395,6 +499,14 @@
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\politics.jpg",
       "PackagePath": "staticwebassets\\lib\\images\\politics.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\sciencearticleimg.jpg",
+      "PackagePath": "staticwebassets\\lib\\images\\sciencearticleimg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\sciencearticleimg2.jpg",
+      "PackagePath": "staticwebassets\\lib\\images\\sciencearticleimg2.jpg"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\AustraliaSays2\\AustraliaSays2\\wwwroot\\lib\\images\\sports.jpg",

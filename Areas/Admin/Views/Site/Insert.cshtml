@@ -8,6 +8,24 @@
     <form method="post" enctype="multipart/form-data">
         <div class="row form-group p-2 m-2">
             <div class="col-3">
+                <label asp-for="Id" class="text-primary"></label>
+            </div>
+            <div class="col-6 text-dark">
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id"></span>
+            </div>
+        </div>
+        <div class="row form-group p-2 m-2">
+            <div class="col-3">
+                <label asp-for="Name" class="text-primary"></label>
+            </div>
+            <div class="col-6 text-dark">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name"></span>
+            </div>
+        </div>
+        <div class="row form-group p-2 m-2">
+            <div class="col-3">
                 <label asp-for="CountryId" class="text-primary"></label>
             </div>
             <div class="col-6 text-dark">

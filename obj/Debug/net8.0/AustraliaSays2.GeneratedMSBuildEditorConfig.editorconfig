@@ -26,8 +26,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/Admin/Views/Articles/Comment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXJ0aWNsZXNcQ29tbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/Admin/Views/Articles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXJ0aWNsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/Admin/Views/Articles/InsertComment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXJ0aWNsZXNcSW5zZXJ0Q29tbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/Admin/Views/Articles/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXJ0aWNsZXNcVXBzZXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/Admin/Views/ArticleTypes/Index.cshtml]
@@ -78,28 +90,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/Commenter/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tbWVudGVyXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/User/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/Commenter/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tbWVudGVyXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/User/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xIb21lXFByaXZhY3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/Reader/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmVhZGVyXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/User/Views/Home/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xIb21lXFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/Reader/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmVhZGVyXFZpZXdzXEhvbWVcUHJpdmFjeS5jc2h0bWw=
+[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/User/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/Reader/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmVhZGVyXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/Reader/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmVhZGVyXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+[C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Areas/User/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/AustraliaSays2/AustraliaSays2/Views/Shared/Error.cshtml]
