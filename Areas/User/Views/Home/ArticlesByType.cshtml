@@ -1,0 +1,38 @@
+﻿@using AustraliaSays2_Models.Models
+@model IEnumerable<Article>
+
+@{
+    ViewData["Title"] = "ArticlesByType";
+}
+
+<h1>ArticlesByType</h1>
+
+<div class="container">
+    @if (Model != null && Model.Any())
+    {
+        <h1 class="text-center">Articles on @Model.FirstOrDefault()?.ArticleType.Type</h1>
+        <div class="row">
+            @foreach (var article in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="@article.ArticleImage" class="card-img-top" alt="@article.Name">
+                        <div class="card-body">
+                            <h5 class="card-title">@article.Name</h5>
+                            <p class="card-text">@article.Description</p>
+                            <a href="@article.URL" class="btn btn-primary" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="text-center mt-5">
+            <h2>No articles found for the selected type.</h2>
+            <p>We couldn't find any articles related to the selected category. Please explore other categories.</p>
+            <a asp-action="Index" class="btn btn-secondary">Go Back</a>
+        </div>
+    }
+</div>

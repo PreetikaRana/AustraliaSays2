@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AustraliaSays2.Areas.Admin.Contollers
 {
     [Area("Admin")]
-   // [Authorize (Roles =SD.Role_Admin)]
+  [Authorize (Roles =SD.Role_Admin)]
    // [ValidateAntiForgeryToken]
     public class ArticleTypesController : Controller
     {
@@ -59,6 +59,8 @@ namespace AustraliaSays2.Areas.Admin.Contollers
             return Json(new { success = false, message = "Invalid model state", id });
         }
         #endregion
+
+
 
         public async Task<IActionResult> Update(ArticleTypeDTO dto)
         {

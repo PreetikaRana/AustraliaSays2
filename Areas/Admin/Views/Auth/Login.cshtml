@@ -32,8 +32,19 @@
         <div class="form-group">
             <label for="Password">Password</label>
             <input type="password" class="form-control" id="Password" name="Password" required />
+            <div class="form-check mt-2">
+                <input type="checkbox"
+                       class="form-check-input"
+                       id="showPasswordToggle"
+                       onclick="togglePasswordVisibility()">
+                <label class="form-check-label" for="showPasswordToggle">Show Password</label>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
 </div>
+@section scripts
+{
+    <script src="~/js/showpassword.js"></script>
+}

@@ -1,50 +1,85 @@
-﻿using AustraliaSays2_DataAccess.Repository.IRepository;
+﻿using AustraliaSays2_DataAccess.Repository;
+using AustraliaSays2_DataAccess.Repository.IRepository;
 using AustraliaSays2_Models;
 using AustraliaSays2_Models.DTO;
 using AustraliaSays2_Models.Models;
 using AustraliaSays2_Models.ViewModels;
 using AustraliaSays2_Utility;
+using Humanizer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using Microsoft.Win32.SafeHandles;
+using System.Security.Claims;
+using System.Security.Policy;
 
 namespace AustraliaSays2.Areas.Admin.Contollers
 {
     [Area("Admin")]
-   
+
     public class ArticlesController : Controller
     {
         private readonly IArticleRepository _articleRepository;
-        public ArticlesController(IArticleRepository articleRepository)
+        private readonly IArticleTypeRepository _articleTypeRepository;
+        private readonly ISiteRepository _siteRepository;
+        public ArticlesController(IArticleRepository articleRepository, IArticleTypeRepository articleTypeRepository, ISiteRepository siteRepository)
         {
             _articleRepository = articleRepository;
+            _articleTypeRepository = articleTypeRepository;
+            _siteRepository = siteRepository;
         }
-        public async Task<IActionResult> Index()
+
+        #region Article Index Page
+        public async Task<IActionResult> Index(int pageIndex = 1, int pageSize = 3)
         {
-            var articles = await _articleRepository.GetAllArticlesAsync();
-            if (articles == null || !articles.Any()) 
-            {
-                articles = new List<Article>(); 
-            }
-            return View(articles);
+            var paginatedArticles = await _articleRepository.GetPaginatedArticlesAsync(pageIndex, pageSize);
+            return View(paginatedArticles);
         }
-      //  [Authorize(Roles = SD.Role_Admin)]
-     //   [ValidateAntiForgeryToken]
+
+        #endregion
+
+
+        #region AddArticle View
+        public async Task<IActionResult> AddArticle()
+        {
+            return View();
+        }
+
+        #endregion
+
+        #region Get And Add Article
+        [HttpGet]
+
+        public async Task<IActionResult> Upsert()
+
+        {
+            ViewBag.ArticleTypes = await _articleTypeRepository.GetArticleTypeListAsync();
+            ViewBag.Sites = await _siteRepository.GetSiteListAsync();
+            return View(new ArticleDTO());
+
+        }
+
+        [HttpPost]
+        //  [Authorize(Roles = SD.Role_Admin)]
+        // [ValidateAntiForgeryToken]
         public async Task<IActionResult> Upsert(ArticleDTO dto)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    var result = await _articleRepository.AddUpdateArticleAsync(dto);
-                    if (dto.Id == null || dto.Id == 0)
+                    //  dto.ApplicationUserId = _userManager.GetUserId(User);
+                    var result = await _articleRepository.AddArticleAsync(dto, User);
+                    if (result != null)
                     {
                         TempData["SuccessMessage"] = result != null ? "Article Added Successfully" : "Failed to Add Article";
                     }
                     else
                     {
-                        TempData["SuccessMessage"] = "Article Updated Successfully";
+                        TempData["ErrorMessage"] = "Their is an issue while adding Article";
                     }
                     return RedirectToAction("Index"); // Redirect ensures Index view is loaded with proper data
                 }
@@ -53,67 +88,44 @@ namespace AustraliaSays2.Areas.Admin.Contollers
                     TempData["ErrorMessage"] = ex.Message;
                 }
             }
+            ViewBag.ArticleTypes = await _articleTypeRepository.GetArticleTypeListAsync();
+            ViewBag.Sites = await _siteRepository.GetSiteListAsync();
             return View(dto);
-            //    if (ModelState.IsValid)
-            //    {
-            //        try
-            //        {
-            //            var result = await _articleRepository.AddUpdateArticleAsync(dto);
-            //            if (dto.Id == null || dto.Id == 0)
-            //            {
-            //                try
-            //                {
-            //                    if (result != null) 
-            //                    {
-            //                        TempData["SuccessMessage"] = "Article Added Successfully";                               
-            //                    }
 
-            //                }
-            //                catch(Exception ex)
-            //                {
-            //                    TempData["ErrorMessage"] = ex.Message;
-            //                }                       
-            //            }
-            //            else
-            //            {
-            //                TempData["SuccessMessage"] = "Article Updated Successfully";
-            //            }
-            //   //         var articleslist = await _articleRepository.GetAllArticlesAsync();  
-
-            //            return RedirectToAction("Index");
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            TempData["ErrorMessage"] = ex.Message;
-            //        }
-
-            //    }
-            //    return View(dto);
-            //}
         }
-     //   [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Commenter)]
-     //   [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Comment()
+        #endregion
+
+
+        #region Comment Index List
+        public async Task<IActionResult> Comment(int pageIndex = 1, int pageSize = 3)
         {
-            var comments = await _articleRepository.GetAllCommentsAsync();
-            var models = new CommentVM
+            var paginatedComments = await _articleRepository.GetPaginatedCommentsAsync(pageIndex, pageSize);
+            var model = new CommentVM
             {
-                Comments = comments,
-                ReportComment = new ReportComment()
+                Comments = paginatedComments.Items,
+                ReportComment = new ReportComment(),
+                TotalPages = paginatedComments.TotalPages,
+                CurrentPage = pageIndex,
+                HasPreviousPage = paginatedComments.HasPreviousPage,
+                HasNextPage = paginatedComments.hasNextpage
             };
-            return View(models);
 
+            return View(model);
         }
-       // [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Commenter)]
-      //  [ValidateAntiForgeryToken]
+
+        #endregion
+
+        #region Insrt Comment
+        //    [Authorize(Roles = SD.Role_Commenter)]
+
         public async Task<IActionResult> InsertComment(CommentDTO dto)
         {
-           if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 try
                 {
-                    var comment = await _articleRepository.AddUpdateCommentAsync(dto);
-                    if(dto.Id == 0 )
+                    var comment = await _articleRepository.AddUpdateCommentAsync(dto, User);
+                    if (dto.Id == 0)
                     {
                         TempData["SuccessMessage"] = comment != null ? "Comment Added Successfully" : "Failed To Add Comment";
                     }
@@ -123,48 +135,53 @@ namespace AustraliaSays2.Areas.Admin.Contollers
                     }
                     return RedirectToAction("Comment");
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     TempData["ErrorMessage"] = ex.Message;
                 }
             }
             return View(dto);
         }
-      //  [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Commenter)]
-      //  [ValidateAntiForgeryToken]
+
+        #endregion
+
+        #region Comment Index View
+
+        public async Task<IActionResult> AddComment()
+        {
+            return View();
+        }
+        #endregion
+
+
+
+        #region DeleteArticleBYId
+        [HttpDelete]
+        //  [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Commenter)]
+        //  [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             if (ModelState.IsValid)
             {
-                try
+                var result = await _articleRepository.DeleteArticleAsync(id);
+
+                if (result != null)
                 {
-                    if (id == 0 || id == null)
-                    {
-                        return BadRequest("Invalid article ID.");
-                    }
-
-
-                    bool isDeleted = await _articleRepository.DeleteArticleAsync(id);
-
-                    if (!isDeleted)
-                    {
-                        return NotFound("Article not found or already deleted.");
-                    }
-
-                    TempData["SuccessMessage"] = "Article deleted successfully.";
-                    return RedirectToAction("Index");
+                    return Json(new { success = true, message = "Article deleted successfully", id });
                 }
-                catch (Exception ex)
+                else
                 {
-
-                    TempData["ErrorMessage"] = ex.Message;
-                    return RedirectToAction("Index");
+                    return Json(new { success = false, message = "Failed to delete Article", id });
                 }
             }
-            return View(id);
-        }
 
+            return Json(new { success = false, message = "Invalid model state", id });
+        }
+        #endregion
+
+        #region Add Report
         [HttpPost]
+        //     [Authorize(Roles = SD.Role_Reader)]
         public async Task<IActionResult> AddReport(ReportCommentDTO dto)
         {
             if (!Enum.IsDefined(typeof(ReportComment.Review), dto.ReportsComment))
@@ -174,8 +191,8 @@ namespace AustraliaSays2.Areas.Admin.Contollers
             }
             try
             {
-               
-                var savedReview = await _articleRepository.AddReportAsync(dto);
+
+                var savedReview = await _articleRepository.AddReportAsync(dto, User);
                 TempData["SuccessMessage"] = $"Review added successfully! Review ID: {savedReview.Id}";
             }
             catch (Exception ex)
@@ -184,17 +201,78 @@ namespace AustraliaSays2.Areas.Admin.Contollers
             }
             return RedirectToAction("Comment");
         }
+        #endregion
+
+        #region Get All Article
+        public async Task<IActionResult> GetAll()
+        {
+            var articlelist = await _articleRepository.GetAllArticlesAsync();
+            return Json(new { data = articlelist });
+        }
+        #endregion
+
+        #region Get and Update Article
+
+        [HttpGet]
+        public async Task<IActionResult> Update(int id)
+        {
+            var article = await _articleRepository.Details(id);
+            if (article == null)
+            {
+                return NotFound();
+            }
+            var articleDto = new ArticleDTO
+            {
+                Id = article.Id,
+                ArticleTypeId = article.ArticleTypeId,
+                Name = article.Name,
+                Tags = article.Tags,
+                SiteId = article.SiteId,
+                URL = article.URL,
+                Description = article.Description,
+                ImagePath = article.ImagePath
+            };
+            ViewBag.ArticleTypes = await _articleTypeRepository.GetArticleTypeListAsync();
+            ViewBag.Sites = await _siteRepository.GetSiteListAsync();
+            return View(articleDto);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(ArticleDTO dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.ArticleTypes = await _articleTypeRepository.GetArticleTypeListAsync();
+                ViewBag.Sites = await _siteRepository.GetSiteListAsync();
+                return View(dto);
+            }
+
+            try
+            {
+                //  dto.ApplicationUserId = _userManager.GetUserId(User);
+                var result = await _articleRepository.UpdateArticleAsync(dto, User);
+                if (result != null)
+                {
+                    TempData["SuccessMessage"] = result != null ? "Article Updated Successfully" : "Failed to Update Article";
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Their is an issue while Updating Article";
+                }
+                return RedirectToAction("Index"); // Redirect ensures Index view is loaded with proper data
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                ViewBag.ArticleTypes = await _articleTypeRepository.GetArticleTypeListAsync();
+                ViewBag.Sites = await _siteRepository.GetSiteListAsync();
+                return View(dto);
+            }
 
 
-        //public async Task<IActionResult> LoadComment()
-        //{
-        //    var comments = await _articleRepository.GetAllCommentsAsync();
-        //    var models = new CommentVM
-        //    {
-        //        Comments = comments,
-        //        ReportComment = new ReportComment()
-        //    };
-        //    return View(models);
-        //}
+        }
+        #endregion
+
     }
 }

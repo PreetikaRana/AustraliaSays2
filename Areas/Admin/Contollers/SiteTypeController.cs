@@ -1,10 +1,13 @@
 ﻿using AustraliaSays2_DataAccess.Repository.IRepository;
 using AustraliaSays2_Models.DTO;
+using AustraliaSays2_Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AustraliaSays2.Areas.Admin.Contollers
 {
     [Area("Admin")]
+    [Authorize(Roles =SD.Role_Admin)]
     public class SiteTypeController : Controller
     {
 

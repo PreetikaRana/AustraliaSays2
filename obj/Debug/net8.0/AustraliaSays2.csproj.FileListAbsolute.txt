@@ -1,12 +1,3 @@
-C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.AssemblyInfo.cs
-C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.RazorAssemblyInfo.cache
-C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.RazorAssemblyInfo.cs
-C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.sourcelink.json
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\bin\Debug\net8.0\appsettings.json
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\bin\Debug\net8.0\AustraliaSays2.staticwebassets.runtime.json
@@ -547,6 +538,16 @@ C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\bin\Debug\net8.0\AustraliaSa
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\bin\Debug\net8.0\AustraliaSays2_DataAccess.pdb
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\bin\Debug\net8.0\AustraliaSays2_Models.pdb
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\bin\Debug\net8.0\AustraliaSays2_Utility.pdb
+C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.AssemblyInfo.cs
+C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.RazorAssemblyInfo.cache
+C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.RazorAssemblyInfo.cs
+C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.sourcelink.json
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\staticwebassets\msbuild.AustraliaSays2.Microsoft.AspNetCore.StaticWebAssets.props
@@ -563,4 +564,3 @@ C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\refint\Aust
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.pdb
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.genruntimeconfig.cache
 C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\ref\AustraliaSays2.dll
-C:\Users\User\Desktop\AustraliaSays2\AustraliaSays2\obj\Debug\net8.0\AustraliaSays2.MvcApplicationPartsAssemblyInfo.cs

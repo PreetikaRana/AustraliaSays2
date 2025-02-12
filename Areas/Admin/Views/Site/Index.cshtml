@@ -1,48 +1,81 @@
-﻿@model IEnumerable<AustraliaSays2_Models.Models.Site>
+﻿@* @model IEnumerable<AustraliaSays2_Models.Models.Site> *@
+@model AustraliaSays2_DataAccess.Repository.PaginatedList<AustraliaSays2_Models.Models.Site>
 @{
     ViewData["Title"] = "Index";
 }
 <div class="row">
-<div class="col-6">
+    <div class="col-6">
         <h1>Let's Explore Sites</h1>
-</div>
-<div class="col-6 text-center">
-        <a asp-action="Insert" class="btn btn-outline-dark "><i class="fas fa-plus"></i>Add New Site</a>
-</div>
+    </div>
+    <div class="col-6 text-center">
+        <a asp-action="AddSite" class="btn btn-outline-dark">
+            <i class="fas fa-plus"></i> Add New Site
+        </a>
+    </div>
 </div>
 
-    <div class="row">
-   
-        @foreach (var site in Model)
+<div class="row">
+    @if (Model.Items.Any())
+    {
+        @foreach (var site in Model.Items)
         {
-            <div class="col-sm-6 p-3 ">
+            <div class="col-sm-6 p-3">
                 <div class="card">
                     <div class="card-body">
                         @if (!string.IsNullOrEmpty(site.Logo))
                         {
-                            <img src="@site.Logo"  alt="Logo" class="img-fluid mb-3" style="min-height:10px; object-fit: cover;" />
+                            <img src="@site.Logo" alt="Logo" class="img-fluid mb-3" style="min-height:10px; object-fit: cover;" />
                         }
                         <h5 class="card-title">@site.Name</h5>
-                        <a></a>
                         <p class="card-text">Created on: @site.CreatedOn.ToString("MM/dd/yyyy")</p>
                         <a href="@site.URL" class="btn btn-primary" target="_blank">Visit Site</a>
                     </div>
                 </div>
             </div>
         }
-   
+    }
+    else
+    {
+        <p>No Sites Found</p>
+    }
+</div>
 
-    </div>
+@if (Model.TotalPages > 1)
+{
+    <div class="pagination-container text-center mt-4">
+        <ul class="pagination justify-content-center">
+            @if (Model.HasPreviousPage)
+            {
+                <li class="page-item">
+                    <a asp-action="Index" asp-route-pageIndex="@(Model.PageIndex - 1)" asp-route-pageSize="@Model.PageSize" class="page-link">Previous</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                </li>
+            }
 
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="alert alert-success">
-        @TempData["SuccessMessage"]
-    </div>
-}
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="alert alert-danger">
-        @TempData["ErrorMessage"]
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    <a asp-action="Index" asp-route-pageIndex="@i" asp-route-pageSize="@Model.PageSize" class="page-link">@i</a>
+                </li>
+            }
+
+            @if (Model.hasNextpage)
+            {
+                <li class="page-item">
+                    <a asp-action="Index" asp-route-pageIndex="@(Model.PageIndex + 1)" asp-route-pageSize="@Model.PageSize" class="page-link">Next</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled">
+                    <span class="page-link">Next</span>
+                </li>
+            }
+        </ul>
     </div>
 }

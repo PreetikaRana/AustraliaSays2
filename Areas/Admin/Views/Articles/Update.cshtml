@@ -1,0 +1,116 @@
+﻿@model AustraliaSays2_Models.DTO.ArticleDTO
+@{
+    ViewData["Title"] = "Upsert";
+}
+
+<h1 class="p-2 m-2"><u>Upsert</u></h1>
+
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="Id">Enter Your Article Id</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="Id" class="form-control" />
+            <span asp-validation-for="Id" class="text-muted"></span>
+        </div>
+    </div>
+
+    <div class="row form-group p-2 m-2">
+        <div class="col-4">
+            <label asp-for="ArticleTypeId" class="text-primary"></label>
+        </div>
+        <div class="col-6 text-dark">
+            <select asp-for="ArticleTypeId" asp-items="@(ViewBag.ArticleTypes ?? new List<SelectListItem>())" class="form-control">
+                <option value="">-- Select ArticleType --</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="Name">Enter Your Article Name</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-muted"></span>
+        </div>
+    </div>
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="Tags">Enter Your Tags</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="Tags" class="form-control" />
+            <span asp-validation-for="Tags" class="text-muted"></span>
+        </div>
+    </div>
+    <div class="row form-group p-2 m-2">
+    <div class="col-4">
+        <label asp-for="SiteId" class="text-primary"></label>
+    </div>
+    <div class="col-6 text-dark">
+        <select asp-for="SiteId" asp-items="@(ViewBag.Sites ?? new List<SelectListItem>())" class="form-control">
+            <option value="">-- Select Site --</option>
+        </select>
+    </div>
+    </div>
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="URL">Enter Your URL</label>
+        </div>
+        <div class="col-6">
+            <input asp-for="URL" class="form-control" />
+            <span asp-validation-for="URL" class="text-muted"></span>
+        </div>
+    </div>
+
+    <div class="form-group row p-2 m-2">
+        <div class="col-4">
+            <label class="text-dark" asp-for="Description">Enter Your Description</label>
+        </div>
+        <div class="col-6">
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-muted"></span>
+
+        </div>
+    </div>
+    <div class="row form-group p-2 m-2">
+        <div class="col-4">
+            <label asp-for="ArticleImage" class="text-primary"></label>
+        </div>
+        <div class="col-6 text-dark">
+            @if (!string.IsNullOrEmpty(Model.ImagePath))
+            {
+                <img src="@Model.ImagePath" alt="Article Image" class="img-thumbnail" style="max-width: 150px;" />
+            }
+            <input asp-for="ArticleImage" type="file" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group row p-2 m-2 align-content-center">
+        <div class="col-4">
+            <button type="submit" class="btn btn-success form-control"><i class="fas fa-plus"></i>&nbsp; Add/Update</button>
+        </div>
+        <div class="col-4">
+            <a asp-action="Index" class="btn btn-dark form-control"><i class="far fa-hand-point-left"></i>&nbsp; BackToList</a>
+        </div>
+
+
+    </div>
+</form>
+
+
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}

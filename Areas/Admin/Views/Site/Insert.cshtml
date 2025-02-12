@@ -29,7 +29,9 @@
                 <label asp-for="CountryId" class="text-primary"></label>
             </div>
             <div class="col-6 text-dark">
-                <input asp-for="CountryId" class="form-control" />
+                <select asp-for="CountryId" class="form-control" asp-items="ViewBag.Countries">
+                    <option value="">-- Select Country --</option>
+                </select>
                 <span asp-validation-for="CountryId"></span>
             </div>
         </div>
@@ -56,7 +58,9 @@
                 <label asp-for="SiteTypeId" class="text-primary"></label>
             </div>
             <div class="col-6 text-dark">
-                <input asp-for="SiteTypeId" class="form-control"/>
+                <select asp-for="SiteTypeId" class="form-control" asp-items="ViewBag.SiteTypes">
+                    <option value="">-- Select Site Type --</option>
+                </select>
                 <span asp-validation-for="SiteTypeId"></span>
             </div>
         </div>
@@ -66,7 +70,7 @@
 
             </div>
             <div class="col-3">
-                <a asp-action="Index" class="btn btn-outline-danger form-control"> Back To List</a>
+                <a asp-action="AddSite" class="btn btn-outline-danger form-control"> Back To List</a>
             </div>
         </div>
     </form>

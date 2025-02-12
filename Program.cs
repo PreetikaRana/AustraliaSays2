@@ -1,6 +1,7 @@
 using AustraliaSays2_DataAccess.Data;
 using AustraliaSays2_DataAccess.Repository;
 using AustraliaSays2_DataAccess.Repository.IRepository;
+
 using AustraliaSays2_Models.Models;
 using AustraliaSays2_Utility;
 using Microsoft.AspNetCore.Builder;
@@ -27,12 +28,11 @@ builder.Services.AddScoped<ISiteRepository, SiteRepository>();
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
+builder.Services.AddScoped<HomeRepository>();
+builder.Services.AddScoped(typeof(PaginatedList<>));
 builder.Services.AddSingleton<GenerateTokenAsync>();
 
 builder.Services.Configure<EmailSetting>(builder.Configuration.GetSection("EmailSettings"));
-
-
-
 
 var app = builder.Build();
 using (var scope =app.Services.CreateScope())

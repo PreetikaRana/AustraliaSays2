@@ -16,22 +16,16 @@
             <span asp-validation-for="Id" class="text-muted"></span>
         </div>
     </div>
-    <div class="form-group row p-2 m-2">
+
+    <div class="row form-group p-2 m-2">
         <div class="col-4">
-            <label class="text-dark" asp-for="ApplicationUserId">Enter Your UserId</label>
+            <label asp-for="ArticleTypeId" class="text-primary"></label>
         </div>
-        <div class="col-6">
-            <input asp-for="ApplicationUserId" class="form-control" />
-            <span asp-validation-for="ApplicationUserId" class="text-muted"></span>
-        </div>
-    </div>
-    <div class="form-group row p-2 m-2">
-        <div class="col-4">
-            <label class="text-dark" asp-for="ArticleTypeId">Enter Your ArticleType Id</label>
-        </div>
-        <div class="col-6">
-            <input asp-for="ArticleTypeId" class="form-control" />
-            <span asp-validation-for="ArticleTypeId" class="text-muted"></span>
+        <div class="col-6 text-dark">
+            <select asp-for="ArticleTypeId" class="form-control" asp-items="ViewBag.ArticleTypes">
+                <option value="">-- Select ArticeType --</option>
+            </select>
+            <span asp-validation-for="ArticleTypeId"></span>
         </div>
     </div>
     <div class="form-group row p-2 m-2">
@@ -52,13 +46,15 @@
             <span asp-validation-for="Tags" class="text-muted"></span>
         </div>
     </div>
-    <div class="form-group row p-2 m-2">
+    <div class="row form-group p-2 m-2">
         <div class="col-4">
-            <label class="text-dark" asp-for="SiteId">Enter Your SiteId</label>
+            <label asp-for="SiteId" class="text-primary"></label>
         </div>
-        <div class="col-6">
-            <input asp-for="SiteId" class="form-control" />
-            <span asp-validation-for="SiteId" class="text-muted"></span>
+        <div class="col-6 text-dark">
+            <select asp-for="SiteId" class="form-control" asp-items="ViewBag.Sites">
+                <option value="">-- Select Site --</option>
+            </select>
+            <span asp-validation-for="SiteId"></span>
         </div>
     </div>
     <div class="form-group row p-2 m-2">
@@ -98,10 +94,7 @@
         <div class="col-4">
             <a asp-action="Index" class="btn btn-dark form-control"><i class="far fa-hand-point-left"></i>&nbsp; BackToList</a>
         </div>
-        <div class="col-4">
-            <button button type="submit" asp-action="Delete" class="btn btn-danger form-control"><i class="fas fa-trash"></i>&nbsp; Delete</button>
-        </div>
-    
+       
         
     </div>
 </form>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "AddArticle";
+}
+
+<div class="row">
+    <div class="col-9">
+        <h1 class="text-center"><u>Article List</u> </h1>
+    </div>
+    <div>
+        <a asp-action="Upsert" class="btn btn-outline-info"><i class="fas fa-plus"></i> &nbsp; Add New Article</a>
+    </div>
+
+</div>
+
+<div class="border shadow p-2 m-2">
+    <table id="tblData" class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ArticleName</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section scripts{
+    <script src="~/js/article.js"></script>
+}

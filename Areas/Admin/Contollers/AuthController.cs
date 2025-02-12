@@ -105,20 +105,6 @@ namespace AustraliaSays2.Areas.Admin.Contollers
         public async Task<IActionResult> Login(LoginUserDTO loginUserDTO)
         {
 
-
-
-            //if (string.IsNullOrEmpty(loginUserDTO.Email) || string.IsNullOrEmpty(loginUserDTO.Password))
-            //{
-            //     TempData["ErrorMessage"] = "Email or Phone Number must be provided.";
-            //    return View(loginUserDTO);
-            //}
-            //if (string.IsNullOrEmpty(loginUserDTO.Password))
-            //{
-            //    TempData["ErrorMessage"] = "Password must be provided.";
-            //    return View(loginUserDTO);
-            //}
-
-
             try
             {
                 var user = await _loginUserRepository.Loginasync(loginUserDTO);
@@ -143,6 +129,21 @@ namespace AustraliaSays2.Areas.Admin.Contollers
                 return View(loginUserDTO);
             }
         }
-        
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            try
+            {
+                await _loginUserRepository.LogOutAsync();
+                TempData["SuccessMessage"] = "You have been logged out successfully.";
+                return RedirectToAction("Login", "Auth");
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "An error occurred while logging out: " + ex.Message;
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
     }
 }
