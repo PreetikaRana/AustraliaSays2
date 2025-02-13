@@ -8,9 +8,14 @@
         <div class="col-12">
             <h1>Comments</h1>
         </div>
-        <div class="col-12">
-            <a asp-action="InsertComment" class="btn btn-outline-dark w-100"><i class="fas fa-plus"></i> Add Comment</a>
-        </div>
+        @if(User.IsInRole("Commenter"))
+        {
+            <div class="col-12">
+                <a asp-action="InsertComment" class="btn btn-outline-dark w-100"><i class="fas fa-plus"></i> Add Comment</a>
+            </div>
+            
+        }
+        
     </div>
 
     @if (Model.Comments != null && Model.Comments.Any())
@@ -73,3 +78,14 @@
         </div>
     </div>
 </div>
+
+@if(TempData["SuccessMesage"] != null)
+{
+<div class="alert alert-danger">
+    @TempData["SuccessMessage"]
+</div>    
+}
+@if(TempData["ErrorMessage"] != null)
+{
+    @TempData["ErrorMessage"]
+}

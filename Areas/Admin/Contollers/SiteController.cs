@@ -31,6 +31,7 @@ namespace AustraliaSays2.Areas.Admin.Contollers
         }
 
         [HttpGet]
+        
         public async Task<IActionResult> Insert()
         {
             ViewBag.Countries = await _siteRepository.GetCountryListAsync();
@@ -114,8 +115,8 @@ namespace AustraliaSays2.Areas.Admin.Contollers
             }
         }
 
-        
 
+        [Authorize(Roles = SD.Role_Admin)]
         public async Task<IActionResult> AddSite()
         {
             return View();

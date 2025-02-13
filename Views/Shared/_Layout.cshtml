@@ -42,15 +42,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Admin" asp-controller="Site" asp-action="Index">Sites</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Details</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" asp-area="Admin" asp-controller="SiteType" asp-action="Index">SiteType</a>
-                                <a class="dropdown-item" asp-area="Admin" asp-controller="ArticleTypes" asp-action="Index">ArticleType</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Details</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="SiteType" asp-action="Index">SiteType</a>
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="ArticleTypes" asp-action="Index">ArticleType</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </li>
+                        }
                         <li class="nav-item">
                             <form class="d-flex" asp-area="User" asp-controller="Home" asp-action="Search" method="get" id="search-form">
                                 <input type="search" class="form-control" name="query" id="search-input" type="text" placeholder="Search..." aria-label="Search" style="width: 200px; border-radius: 15px; padding: 0.4rem; font-size: 14px; margin-right: 10px;">

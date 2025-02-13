@@ -7,11 +7,15 @@
     <div class="col-6">
         <h1>Let's Explore Sites</h1>
     </div>
-    <div class="col-6 text-center">
-        <a asp-action="AddSite" class="btn btn-outline-dark">
-            <i class="fas fa-plus"></i> Add New Site
-        </a>
-    </div>
+    @if(User.IsInRole("Admin"))
+    {
+        <div class="col-6 text-center">
+            <a asp-action="AddSite" class="btn btn-outline-dark">
+                <i class="fas fa-plus"></i> Add New Site
+            </a>
+        </div>
+    }
+    
 </div>
 
 <div class="row">

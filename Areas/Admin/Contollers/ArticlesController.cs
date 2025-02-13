@@ -43,6 +43,8 @@ namespace AustraliaSays2.Areas.Admin.Contollers
 
 
         #region AddArticle View
+        [Authorize(Roles = SD.Role_Admin)]
+        
         public async Task<IActionResult> AddArticle()
         {
             return View();
@@ -50,6 +52,7 @@ namespace AustraliaSays2.Areas.Admin.Contollers
 
         #endregion
 
+        
         #region Get And Add Article
         [HttpGet]
 
@@ -63,8 +66,7 @@ namespace AustraliaSays2.Areas.Admin.Contollers
         }
 
         [HttpPost]
-        //  [Authorize(Roles = SD.Role_Admin)]
-        // [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> Upsert(ArticleDTO dto)
         {
             if (ModelState.IsValid)
@@ -94,7 +96,6 @@ namespace AustraliaSays2.Areas.Admin.Contollers
 
         }
         #endregion
-
 
         #region Comment Index List
         public async Task<IActionResult> Comment(int pageIndex = 1, int pageSize = 3)
@@ -143,17 +144,7 @@ namespace AustraliaSays2.Areas.Admin.Contollers
             return View(dto);
         }
 
-        #endregion
-
-        #region Comment Index View
-
-        public async Task<IActionResult> AddComment()
-        {
-            return View();
-        }
-        #endregion
-
-
+        #endregion       
 
         #region DeleteArticleBYId
         [HttpDelete]
@@ -204,6 +195,7 @@ namespace AustraliaSays2.Areas.Admin.Contollers
         #endregion
 
         #region Get All Article
+
         public async Task<IActionResult> GetAll()
         {
             var articlelist = await _articleRepository.GetAllArticlesAsync();
